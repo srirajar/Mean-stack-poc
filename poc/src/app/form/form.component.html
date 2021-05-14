@@ -1,0 +1,21 @@
+
+<mat-card >
+  <div style="display: flex;">
+    <input  required placeholder="file" type="file" (change) = "onFileSelected($event)">
+  </div>
+
+  &nbsp;
+  <p *ngIf = "url ==null">Choose a file to upload</p>
+
+  <div >
+  <pdf-viewer  [src] = "url" height="10px" [render-text] = "true" style="display: block; height: 420px;"></pdf-viewer>
+</div>
+
+
+<button *ngIf = "url !=null" mat-raised-button style="color: navy;" (click) = upload() [disabled] = "url ==null">Upload File</button>
+
+
+
+</mat-card>
+
+
